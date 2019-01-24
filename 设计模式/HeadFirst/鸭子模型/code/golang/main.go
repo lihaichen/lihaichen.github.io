@@ -21,19 +21,19 @@ func (m *FlyNoWay) fly() {
 }
 
 type Duck struct {
-	f FlyBehavior
+	fb FlyBehavior
 }
 
-func (m *Duck) performFly() {
-	m.f.fly()
+func (d *Duck) performFly() {
+	d.fb.fly()
 }
 
 func main() {
 	fmt.Println("duck")
 	duck := &Duck{
-		f: &FlyNoWay{},
+		fb: &FlyNoWay{},
 	}
 	duck.performFly()
-	duck.f = &FlyWithWings{}
+	duck.fb = &FlyWithWings{}
 	duck.performFly()
 }
