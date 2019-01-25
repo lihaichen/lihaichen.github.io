@@ -3,6 +3,7 @@ public class MiniDuckSimulator {
  Duck mallard = new MallardDuck();
  mallard.display();
  mallard.performFly();
-
+ mallard.flyBehavior = new FlyNoWay();
+ mallard.performFly();
  }
 }
